@@ -1,0 +1,36 @@
+<% title "Control" %>
+
+<p>
+  <strong>Server:</strong>
+  <%=h @control.server_id %>
+</p>
+<p>
+  <strong>Customer:</strong>
+  <%=h @control.customer_id %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%=h @control.user_id %>
+</p>
+<p>
+  <strong>File:</strong>
+  <%=h @control.file %>
+</p>
+<p>
+  <strong>Backup File:</strong>
+  <%=h @control.backup_file %>
+</p>
+<p>
+  <strong>Subject:</strong>
+  <%=h @control.subject %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%=h @control.body %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_control_path(@control) %> |
+  <%= link_to "Destroy", @control, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", controls_path %>
+</p>

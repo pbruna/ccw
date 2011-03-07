@@ -1,0 +1,29 @@
+<% title "Controls" %>
+
+<table>
+  <tr>
+    <th>Server</th>
+    <th>Customer</th>
+    <th>User</th>
+    <th>File</th>
+    <th>Backup File</th>
+    <th>Subject</th>
+    <th>Body</th>
+  </tr>
+  <% for control in @controls %>
+    <tr>
+      <td><%=h control.server_id %></td>
+      <td><%=h control.customer_id %></td>
+      <td><%=h control.user_id %></td>
+      <td><%=h control.file %></td>
+      <td><%=h control.backup_file %></td>
+      <td><%=h control.subject %></td>
+      <td><%=h control.body %></td>
+      <td><%= link_to "Show", control %></td>
+      <td><%= link_to "Edit", edit_control_path(control) %></td>
+      <td><%= link_to "Destroy", control, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Control", new_control_path %></p>

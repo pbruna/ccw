@@ -1,0 +1,26 @@
+<% form_for @control do |f| %>
+  <%= f.error_messages %>
+    <%= f.hidden_field:server_id, :value => server.id %>
+    <%= f.hidden_field :customer_id, :value => server.customer.id %>
+  <p>
+    <%= f.label :user_id, "Usuario" %><br />
+    <%= f.collection_select(:user_id, users, :id, :login) %>
+  </p>
+  <p>
+    <%= f.label :file %><br />
+    <%= f.text_field :file %>
+  </p>
+  <p>
+    <%= f.label :backup_file %><br />
+    <%= f.text_field :backup_file %>
+  </p>
+  <p>
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

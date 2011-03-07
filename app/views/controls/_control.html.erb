@@ -1,0 +1,13 @@
+<tr>
+	<td>
+		<strong><%= h l control.created_at, :format => :short %></strong><br/>
+		<%= h control.user.name %>
+	</td>
+	<td>
+		<strong><%= h control.subject %></strong><br/>
+		<%= textarea_display(h(control.body)) %><br/><br/>
+		<strong>Archivo</strong>: <%= h control.file%><br/>
+		<strong>Respaldo</strong>: <%= h control.backup_file %><br/><br/>
+	</td>
+</tr>
+	

@@ -1,0 +1,27 @@
+<% title "Servers" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Customer</th>
+    <th>Password</th>
+    <th>Ip Address</th>
+    <th>Operative System</th>
+    <th>Os Version</th>
+  </tr>
+  <% for server in @servers %>
+    <tr>
+      <td><%=h server.name %></td>
+      <td><%=h server.customer_id %></td>
+      <td><%=h server.password %></td>
+      <td><%=h server.ip_address %></td>
+      <td><%=h server.operative_system %></td>
+      <td><%=h server.os_version %></td>
+      <td><%= link_to "Show", server %></td>
+      <td><%= link_to "Edit", edit_server_path(server) %></td>
+      <td><%= link_to "Destroy", server, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Server", new_server_path %></p>

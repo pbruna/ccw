@@ -1,0 +1,6 @@
+<% title "Agregar Control de Cambio" %>
+<h2><%= h @server.name %></h2>
+
+<%= render :partial => 'form', :locals => {:server => @server, :users => @users} %>
+
+<p><%= link_to "Back to List", controls_path %></p>

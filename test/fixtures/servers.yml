@@ -1,0 +1,15 @@
+one:
+  name: MyString
+  customer_id: 1
+  password: MyString
+  ip_address: MyString
+  operative_system: MyString
+  os_version: MyString
+
+two:
+  name: MyString
+  customer_id: 1
+  password: MyString
+  ip_address: MyString
+  operative_system: MyString
+  os_version: MyString

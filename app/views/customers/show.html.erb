@@ -1,0 +1,25 @@
+<% title @customer.name %>
+<p class="action_bar">
+  <%= link_to "Nuevo Servidor", new_customer_server_path(@customer) %> |
+  <%= link_to "Editar", edit_customer_path(@customer) %> |
+  <%= link_to "Eliminar", @customer, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Volver", customers_path %>
+</p>
+
+<div id="childrens">
+	<h3>Servidores</h3>
+	<hr/>
+	<br>
+	<table class="list">
+	  <tr>
+		<th>Nombre</th>
+		<th>Contraseña</th>
+		<th>IP</th>
+		<th>Acciones</th>
+	  </tr>
+	
+	  <%= render :partial => "servers/server", :collection => @customer.servers %>
+	
+	</table>
+</div>
+

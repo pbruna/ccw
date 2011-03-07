@@ -1,0 +1,9 @@
+<tr>
+	<td><%= h server.name %></td>
+	<td><%= h server.password %></td>
+	<td><%= h server.ip_address %></td>
+	<td>
+		<%= link_to "Ver", server_path(server) %>|
+		<%= link_to "Editar", edit_server_path(server) %>
+	</td>
+</tr>

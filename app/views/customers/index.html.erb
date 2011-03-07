@@ -1,0 +1,21 @@
+<p class="action_bar"><%= link_to "Nuevo Cliente", new_customer_path, :class => "new_link" %></p>
+<% title "Clientes" %>
+
+<div id="childrens">
+<table>
+  <tr>
+    <th>Nombre</th>
+	<th>Acciones</th>
+  </tr>
+  <% for customer in @customers %>
+    <tr>
+      <td><%=h customer.name %></td>
+      <td>
+		<%= link_to "Ver", customer %> |
+      	<%= link_to "Editar", edit_customer_path(customer) %> |
+      	<%= link_to "Eliminar", customer, :confirm => 'Estás seguro?', :method => :delete %>
+	  </td>
+    </tr>
+  <% end %>
+</table>
+</div>

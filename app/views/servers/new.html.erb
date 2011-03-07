@@ -1,0 +1,5 @@
+<% title "Agregar Servidor a #{@customer.name}" %>
+
+<%= render :partial => 'form', :locals => {:customer => @customer} %>
+
+<p><%= link_to "Back to List", servers_path %></p>

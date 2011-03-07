@@ -1,0 +1,25 @@
+<% form_for @server do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  	<%= f.hidden_field :customer_id, :value => customer.id %>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :ip_address %><br />
+    <%= f.text_field :ip_address %>
+  </p>
+  <p>
+    <%= f.label :operative_system %><br />
+    <%= f.text_field :operative_system %>
+  </p>
+  <p>
+    <%= f.label :os_version %><br />
+    <%= f.text_field :os_version %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

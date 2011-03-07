@@ -1,4 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :controls
+
+  map.resources :users
+
+  map.root :controller => "customers"
+  map.resources :servers, :has_many => [:controls]
+
+  map.resources :customers, :has_many => [:servers]
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

@@ -1,0 +1,31 @@
+<% title "#{@server.customer.name}: #{@server.name}" %>
+<p class="action_bar">
+  <%= link_to "Nuevo Control de Cambio", new_server_control_path(@server) %> |
+  <%= link_to "Editar", edit_server_path(@server) %> |
+  <%= link_to "Eliminar", @server, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Volver", customer_path(@server.customer) %>
+</p>
+<div id="server_info">
+	<table>
+		<tr>
+			<td class="title">Contraseña</td>
+			<td><%= h @server.password%>
+		</tr>
+		<tr>
+			<td class="title">Dirección IP</td>
+			<td><%= h @server.ip_address %>
+		</tr>
+		<tr>
+			<td class="title">Sistema Operativo</td>
+			<td><%= h "#{@server.operative_system} #{@server.os_version}" %>
+		</tr>
+	</table>
+</div>
+<br/>
+<div id="childrens">
+<h3>Controles de Cambio</h3>
+<hr/>
+<table class="list">
+  <%= render :partial => "controls/control", :collection => @server.controls, :spacer_template => "controls/spacer" %>
+</table>
+</div>
