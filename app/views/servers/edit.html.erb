@@ -1,6 +1,6 @@
 <% title "Edit Server" %>
 
-<%= render :partial => 'form' %>
+<%= render :partial => 'form', :locals => {:customer => @customer} %>
 
 <p>
   <%= link_to "Show", @server %> |
