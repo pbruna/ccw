@@ -25,6 +25,7 @@ class ServersController < ApplicationController
 
   def edit
     @server = Server.find(params[:id])
+    @customer = Customer.find(@server.customer_id)
   end
 
   def update
