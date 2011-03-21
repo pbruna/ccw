@@ -12,7 +12,7 @@
       <td>
 		<% if defined?(customer.servers.size)%>
 		   <ul>
-			<% customer.servers.each do |server| %>
+			<% customer.servers.sort.each do |server| %>
 			 <li>	<%= link_to "#{server.name}", server_path(server) %></li>
 			<% end %>
 			</ul>
