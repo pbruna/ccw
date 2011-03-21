@@ -1,0 +1,23 @@
+<table id="customers">
+  <tr>
+    <th>Cliente</th>
+	<th>Información</th>
+  </tr>
+  <% for customer in customers %>
+    <tr class="customer_info" onclick="location.href='/customers/<%= customer.id %>'">
+      <td ><%=h customer.name %></td>
+      <td>
+		<%= customer.servers.size %> servidores <br/>
+		<%= link_to "Nuevo Control", new_control_path(:customer_id => customer.id) %> |
+		<%= link_to "Agregar Servidor", new_customer_server_path(customer) %> |
+		<%= link_to "Editar", edit_customer_path(customer) %>
+		<br/>
+	  </td>
+    </tr>
+  <% end %>
+	<tr>
+	<% 2.times do %>
+			<td style="padding-left: 0px; padding-right: 0px; "><br/><hr/></td>
+	<% end %>
+	</tr>
+</table>

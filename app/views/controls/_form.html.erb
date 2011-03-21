@@ -1,7 +1,14 @@
 <% form_for @control do |f| %>
   <%= f.error_messages %>
-    <%= f.hidden_field:server_id, :value => server.id %>
-    <%= f.hidden_field :customer_id, :value => server.customer.id %>
+  <p>
+	<%= f.label :server, "Servidor"%><br/>
+	<% if defined?(servers.size) %>
+		<%= f.collection_select(:server_id, servers, :id, :name) %>
+	<% else %>
+		<%= servers.name %>
+		<%= f.hidden_field :server_id, :value => servers.id %>
+	<% end %>
+
   <p>
     <%= f.label :user_id, "Usuario" %><br />
     <%= f.collection_select(:user_id, users, :id, :login) %>

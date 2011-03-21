@@ -1,21 +1,26 @@
 class ControlsController < ApplicationController
-  
+
   def index
     @controls = Control.all
   end
 
   def new
     @users = User.all
-    @server = Server.find(params[:server_id])
+    if params[:server_id]
+      @servers = Server.find(params[:server_id])
+    elsif params[:customer_id]
+      @servers= Server.find(:all, :conditions => ["customer_id = ?", params[:customer_id]])
+    end
     @control = Control.new
   end
+
 
   def create
     @control = Control.new(params[:control])
     @users = User.all
     @server = Server.find(@control.server_id)
     if @control.save
-      flash[:notice] = "Successfully created control."
+      flash[:notice] = "Control creado correctamente."
       redirect_to server_path(@server)
     else
       render :action => 'new'
@@ -27,7 +32,9 @@ class ControlsController < ApplicationController
   end
 
   def edit
+    @users = User.all
     @control = Control.find(params[:id])
+    @servers = Server.find(@control.server_id)
   end
 
   def update
@@ -47,7 +54,7 @@ class ControlsController < ApplicationController
     flash[:notice] = "Successfully destroyed control."
     redirect_to controls_url
   end
-  
+
   private
-  
+
 end

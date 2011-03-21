@@ -1,6 +1,6 @@
-<% title "Edit Control" %>
+<% title "Editar Control de Cambio" %>
 
-<%= render :partial => 'form' %>
+<%= render :partial => 'form',  :locals => {:servers => @servers, :users => @users} %>
 
 <p>
   <%= link_to "Show", @control %> |

@@ -1,4 +1,6 @@
-<% title "#{@server.customer.name}: #{@server.name}" %>
+<h2><%= link_to "#{@server.customer.name}:", customer_path(@server.customer_id)%> 
+<%= "#{@server.name}" %></h2>
+<br/><br/>
 <p class="action_bar">
   <%= link_to "Nuevo Control de Cambio", new_server_control_path(@server) %> |
   <%= link_to "Editar", edit_server_path(@server) %> |
@@ -26,6 +28,6 @@
 <h3>Controles de Cambio</h3>
 <hr/>
 <table class="list">
-  <%= render :partial => "controls/control", :collection => @server.controls, :spacer_template => "controls/spacer" %>
+  <%= render :partial => "controls/control", :collection => @server.controls.reverse, :spacer_template => "controls/spacer" %>
 </table>
 </div>

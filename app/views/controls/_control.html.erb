@@ -1,13 +1,13 @@
 <tr>
-	<td>
+	<td style="width: 200px;">
 		<strong><%= h l control.created_at, :format => :short %></strong><br/>
 		<%= h control.user.name %>
 	</td>
 	<td>
 		<strong><%= h control.subject %></strong><br/>
 		<%= textarea_display(h(control.body)) %><br/><br/>
-		<strong>Archivo</strong>: <%= h control.file%><br/>
-		<strong>Respaldo</strong>: <%= h control.backup_file %><br/><br/>
+		<%= link_to "Más detalles", control_path(control) %> |
+		<%= link_to "Editar", edit_control_path(control)%>
 	</td>
 </tr>
 	

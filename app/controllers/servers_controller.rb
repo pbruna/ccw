@@ -1,6 +1,6 @@
 class ServersController < ApplicationController
   def index
-    @servers = Server.all
+    @customers = Customer.find(:all, :include => :servers, :order => :name)
   end
 
   def new

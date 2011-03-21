@@ -146,3 +146,8 @@ select {
 	width: 300px;
 	font-size: 14px;	
 }
+
+table#customers .customer_info:hover td {
+	background-color: #FCFFCD;
+	cursor: pointer;
+}
