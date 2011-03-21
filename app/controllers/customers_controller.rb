@@ -1,6 +1,8 @@
 class CustomersController < ApplicationController
+  before_filter :find_customer, :only => [:show, :edit, :update, :destroy]
+  
   def index
-    @customers = Customer.all
+    @customers = Customer.find(:all, :order => :name)
   end
 
   def new
@@ -18,15 +20,14 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @customer = Customer.find(params[:id])
+    
   end
 
   def edit
-    @customer = Customer.find(params[:id])
+    
   end
 
   def update
-    @customer = Customer.find(params[:id])
     if @customer.update_attributes(params[:customer])
       flash[:notice] = "Successfully updated customer."
       redirect_to @customer
@@ -36,9 +37,14 @@ class CustomersController < ApplicationController
   end
 
   def destroy
-    @customer = Customer.find(params[:id])
     @customer.destroy
     flash[:notice] = "Successfully destroyed customer."
     redirect_to customers_url
   end
+  
+  private
+  def find_customer
+    @customer = Customer.find(params[:id])
+  end
+  
 end
