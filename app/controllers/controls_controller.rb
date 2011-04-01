@@ -8,8 +8,10 @@ class ControlsController < ApplicationController
     @users = User.all
     if params[:server_id]
       @servers = Server.find(params[:server_id])
+      @customer = @servers.customer_id
     elsif params[:customer_id]
       @servers= Server.find(:all, :conditions => ["customer_id = ?", params[:customer_id]])
+      @customer = params[:customer_id]
     end
     @control = Control.new
   end

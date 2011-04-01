@@ -29,5 +29,6 @@
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </p>
+  <%= f.hidden_field :customer_id, :value => customer_id %>
   <p><%= f.submit %></p>
 <% end %>

@@ -1,6 +1,6 @@
 <% title "Editar Control de Cambio" %>
 
-<%= render :partial => 'form',  :locals => {:servers => @servers, :users => @users} %>
+<%= render :partial => 'form',  :locals => {:servers => @servers, :users => @users, :customer_id => @servers.customer_id} %>
 
 <p>
   <%= link_to "Show", @control %> |
