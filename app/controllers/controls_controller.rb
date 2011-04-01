@@ -1,7 +1,7 @@
 class ControlsController < ApplicationController
 
   def index
-    @controls = Control.all
+    @controls = Control.find(:all, :limit => 20, :order => "created_at desc")
   end
 
   def new

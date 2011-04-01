@@ -31,7 +31,6 @@ class ServersController < ApplicationController
   def update
     @server = Server.find(params[:id])
     logger.debug("aqui #{@server.customer_id}")
-    @customer = Customer.find(@server.customer_id)
     if @server.update_attributes(params[:server])
       flash[:notice] = "Successfully updated server."
       redirect_to @server

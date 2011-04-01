@@ -9,6 +9,7 @@
 	    <%= javascript_include_tag "jquery.formatCurrency-1.4.0.min" %>
 	    <%= javascript_include_tag "jquery.formatCurrency.es-CL" %>
 	    <%= javascript_include_tag "jquery-ui" %>
+	    <%= javascript_include_tag "i18n/jquery.ui.datepicker-es.js" %>
 
     <%= yield(:head) %>
   </head>
@@ -16,6 +17,7 @@
 	<div id="header">
 		<%= link_to "Clientes", customers_path %> | 
 		<%= link_to "Servidores", servers_path %> |
+		<%= link_to "Controles", controls_path %> |
 		<%= link_to "Usuarios", users_path%>
 	</div>
     <div id="container">

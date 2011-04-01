@@ -1,32 +1,32 @@
 <% title "Control" %>
 
 <p>
-  <strong>Server:</strong>
-  <%=h @control.server_id %>
+  <strong>Servidor</strong><br/>
+  <%=h @control.server.name %>
 </p>
 <p>
-  <strong>Customer:</strong>
-  <%=h @control.customer_id %>
+  <strong>Cliente</strong><br/>
+  <%=h @control.customer.name %>
 </p>
 <p>
-  <strong>User:</strong>
-  <%=h @control.user_id %>
+  <strong>Usuario</strong><br/>
+  <%=h @control.user.name %>
 </p>
 <p>
-  <strong>File:</strong>
+  <strong>Archivo modificado</strong><br/>
   <%=h @control.file %>
 </p>
 <p>
-  <strong>Backup File:</strong>
+  <strong>Archivo de respaldo</strong><br/>
   <%=h @control.backup_file %>
 </p>
 <p>
-  <strong>Subject:</strong>
+  <strong>Asunto</strong><br/>
   <%=h @control.subject %>
 </p>
 <p>
-  <strong>Body:</strong>
-  <%=h @control.body %>
+  <strong>Información:</strong><br/>
+  <%= textarea_display(h @control.body) %>
 </p>
 
 <p>

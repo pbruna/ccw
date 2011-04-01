@@ -1,5 +1,5 @@
 class Server < ActiveRecord::Base
-  attr_accessible :name, :customer_id, :password, :ip_address, :operative_system, :os_version
+  attr_accessible :name, :customer_id, :password, :ip_address, :operative_system, :os_version, :notes
   
   belongs_to :customer
   has_many :controls

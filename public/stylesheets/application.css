@@ -100,6 +100,14 @@ table {
 
 table td {
 	padding-right: 20px;
+	vertical-align: top;
+}
+
+table th {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+	background: #EEE000;
 }
 
 .new_link {

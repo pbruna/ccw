@@ -22,7 +22,20 @@
 			<td><%= h "#{@server.operative_system} #{@server.os_version}" %>
 		</tr>
 	</table>
+	<br/>
+	<span id="show_filter" class="searchLink"> <%= link_to_function "Ver Notas", "display_server_notes()" %> </span>
+	<br/><br/>
+
+
+	<div id="server_notes" style="display: none;">
+		<%= textarea_display(h @server.notes) %>
+		<br/>
+		<br/>
+	</div>
 </div>
+
+
+<br/>
 <br/>
 <div id="childrens">
 <h3>Controles de Cambio</h3>

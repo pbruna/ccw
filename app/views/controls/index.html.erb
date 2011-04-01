@@ -1,29 +1,26 @@
-<% title "Controls" %>
+<% title "Controles" %>
 
-<table>
+<table style="width:100%;">
   <tr>
-    <th>Server</th>
-    <th>Customer</th>
-    <th>User</th>
-    <th>File</th>
-    <th>Backup File</th>
-    <th>Subject</th>
-    <th>Body</th>
+    <th>Cliente</th>
+    <th>Detalles</th>
   </tr>
   <% for control in @controls %>
     <tr>
-      <td><%=h control.server_id %></td>
-      <td><%=h control.customer_id %></td>
-      <td><%=h control.user_id %></td>
-      <td><%=h control.file %></td>
-      <td><%=h control.backup_file %></td>
-      <td><%=h control.subject %></td>
-      <td><%=h control.body %></td>
-      <td><%= link_to "Show", control %></td>
-      <td><%= link_to "Edit", edit_control_path(control) %></td>
-      <td><%= link_to "Destroy", control, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td style="width: 200px;">
+		<%= h control.customer ? control.customer.name : "" %><br/>
+		<%= h control.server.name %><br/><br/>
+		<%= h control.user.login %>, hace <%= distance_of_time_in_words(Time.now, control.created_at) %>
+	  </td>
+	  <td>
+		<strong><%= h control.subject %></strong><br/>
+		<%= textarea_display (h control.body) %><br/><br/>
+		<%= link_to "Ver", control %> | <%= link_to "Editar", edit_control_path(control) %>
+		<br/><br/>
+	  </td>
     </tr>
+	<%= render :partial => "spacer" %>
   <% end %>
 </table>
 
-<p><%= link_to "New Control", new_control_path %></p>
+<p><%= link_to "Nuevo Control", new_control_path %></p>
