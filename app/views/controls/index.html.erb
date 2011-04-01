@@ -10,7 +10,7 @@
       <td style="width: 200px;">
 		<%= h control.customer ? control.customer.name : "" %><br/>
 		<%= h control.server.name %><br/><br/>
-		<%= h control.user.login %>, hace <%= distance_of_time_in_words(Time.now, control.created_at) %>
+		<%= h control.user.login %>, <%= distance_of_time_in_words(Time.now, control.created_at) %>
 	  </td>
 	  <td>
 		<strong><%= h control.subject %></strong><br/>
